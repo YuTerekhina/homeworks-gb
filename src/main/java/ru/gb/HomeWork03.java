@@ -15,6 +15,12 @@ public class HomeWork03 {
         System.out.println("Задание №2");
         System.out.println("----------------------------");
         arrayInt();
+
+        System.out.println();
+        System.out.println("----------------------------");
+        System.out.println("Задание №3");
+        System.out.println("----------------------------");
+        multiplyNum();
     }
 
     public static void changesNum() {
@@ -41,6 +47,16 @@ public class HomeWork03 {
         for (int i = 0; i < arr.length; i++){
             arr[0] = 1;
             arr[i] = arr[0] + i;
+        }
+        System.out.print(Arrays.toString(arr));
+    }
+
+    public static void multiplyNum() {
+        int arr[] = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < 6) {
+                arr[i] = arr[i] * 2;
+            }
         }
         System.out.print(Arrays.toString(arr));
     }
