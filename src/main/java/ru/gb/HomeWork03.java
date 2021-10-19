@@ -21,6 +21,12 @@ public class HomeWork03 {
         System.out.println("Задание №3");
         System.out.println("----------------------------");
         multiplyNum();
+
+        System.out.println();
+        System.out.println("----------------------------");
+        System.out.println("Задание №4");
+        System.out.println("----------------------------");
+        changeDiagonals();
     }
 
     public static void changesNum() {
@@ -59,5 +65,32 @@ public class HomeWork03 {
             }
         }
         System.out.print(Arrays.toString(arr));
+    }
+
+    public static void changeDiagonals() {
+        System.out.println("Начальный массив:");
+        int arr[][] = new int[5][5];
+        final Random random = new Random();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                arr[i][j] = random.nextInt(9);
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println("Измененный массив:");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if (i == j) {
+                    arr[i][j] = 1;
+                }
+                if ((i + j) == (arr.length - 1)){
+                    arr[i][j] = 1;
+                }
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 }
