@@ -2,6 +2,7 @@ package ru.gb;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class HomeWork03 {
 
@@ -27,6 +28,12 @@ public class HomeWork03 {
         System.out.println("Задание №4");
         System.out.println("----------------------------");
         changeDiagonals();
+
+        System.out.println();
+        System.out.println("----------------------------");
+        System.out.println("Задание №5");
+        System.out.println("----------------------------");
+        secondArgs(5, 15);
     }
 
     public static void changesNum() {
@@ -92,5 +99,13 @@ public class HomeWork03 {
             }
             System.out.println();
         }
+    }
+
+    public static void secondArgs(int len, int initialValue) {
+        int arr[] = new int[len];
+        for (int i = 0; i < arr.length; i++){
+            arr[i] =  initialValue;
+        }
+        System.out.print(Arrays.toString(arr));
     }
 }
