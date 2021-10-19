@@ -9,6 +9,12 @@ public class HomeWork03 {
         System.out.println("Задание №1");
         System.out.println("----------------------------");
         changesNum();
+
+        System.out.println();
+        System.out.println("----------------------------");
+        System.out.println("Задание №2");
+        System.out.println("----------------------------");
+        arrayInt();
     }
 
     public static void changesNum() {
@@ -28,5 +34,14 @@ public class HomeWork03 {
         }
         System.out.print(Arrays.toString(arr));
 
+    }
+
+    public static void arrayInt() {
+        int arr[] = new int[100];
+        for (int i = 0; i < arr.length; i++){
+            arr[0] = 1;
+            arr[i] = arr[0] + i;
+        }
+        System.out.print(Arrays.toString(arr));
     }
 }
