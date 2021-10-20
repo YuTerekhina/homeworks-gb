@@ -40,6 +40,12 @@ public class HomeWork03 {
         System.out.println("Задание №6");
         System.out.println("----------------------------");
         maxMinNumbers();
+
+        System.out.println();
+        System.out.println("----------------------------");
+        System.out.println("Задание №7");
+        System.out.println("----------------------------");
+        System.out.println(sumArray());
     }
 
     public static void changesNum() {
@@ -53,7 +59,7 @@ public class HomeWork03 {
         System.out.println();
         System.out.println("Измененный массив:");
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0){
+            if (arr[i] == 0) {
                 arr[i] = 1;
             } else arr[i] = 0;
         }
@@ -63,7 +69,7 @@ public class HomeWork03 {
 
     public static void arrayInt() {
         int arr[] = new int[100];
-        for (int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             arr[0] = 1;
             arr[i] = arr[0] + i;
         }
@@ -95,10 +101,7 @@ public class HomeWork03 {
         System.out.println("Измененный массив:");
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                if (i == j) {
-                    arr[i][j] = 1;
-                }
-                if ((i + j) == (arr.length - 1)){
+                if ((i == j) || ((i + j) == (arr.length - 1))) {
                     arr[i][j] = 1;
                 }
                 System.out.print(arr[i][j] + " ");
@@ -109,8 +112,8 @@ public class HomeWork03 {
 
     public static void secondArgs(int len, int initialValue) {
         int arr[] = new int[len];
-        for (int i = 0; i < arr.length; i++){
-            arr[i] =  initialValue;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = initialValue;
         }
         System.out.print(Arrays.toString(arr));
     }
@@ -123,19 +126,48 @@ public class HomeWork03 {
         int arr[] = new int[len];
         System.out.println("Введите диапазон значений массива: ");
         int numbers = scanner.nextInt();
-        for (int i = 0; i < len; i++){
+        for (int i = 0; i < len; i++) {
             arr[i] = random.nextInt(numbers);
         }
         System.out.println(Arrays.toString(arr));
         int max = arr[0];
-        int min = arr[len-1];
-        for (int i = 0; i < len; i++){
-            if(max <= arr[i]){
-                    max = arr[i];
-            }else if (min >= arr[i]){
+        int min = arr[len - 1];
+        for (int i = 0; i < len; i++) {
+            if (max <= arr[i]) {
+                max = arr[i];
+            } else if (min > arr[i]) {
                 min = arr[i];
             }
         }
         System.out.println("Максимальный элемент массива = " + max + "\nМинимальный элемент массива = " + min);
+    }
+
+    public static boolean sumArray() {
+        final Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите длину массива: ");
+        int len = scanner.nextInt();
+        int arr[] = new int[len];
+        System.out.println("Введите диапазон значений массива: ");
+        int numbers = scanner.nextInt();
+        for (int i = 0; i < len; i++) {
+            arr[i] = random.nextInt(numbers);
+        }
+        System.out.println(Arrays.toString(arr));
+        int leftSum;
+        int rightSum;
+        for (int i = 0; i < len; i++) {
+            leftSum = 0;
+            rightSum = 0;
+            for (int j = 0; j < i; j++) {
+                leftSum += arr[j];
+            }
+            for (int j = i; j < len; j++) {
+                rightSum += arr[j];
+            }
+            if (rightSum == leftSum) return true;
+        }
+        return false;
+
     }
 }
