@@ -34,6 +34,12 @@ public class HomeWork03 {
         System.out.println("Задание №5");
         System.out.println("----------------------------");
         secondArgs(5, 15);
+
+        System.out.println();
+        System.out.println("----------------------------");
+        System.out.println("Задание №6");
+        System.out.println("----------------------------");
+        maxMinNumbers();
     }
 
     public static void changesNum() {
@@ -107,5 +113,29 @@ public class HomeWork03 {
             arr[i] =  initialValue;
         }
         System.out.print(Arrays.toString(arr));
+    }
+
+    public static void maxMinNumbers() {
+        final Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите длину массива: ");
+        int len = scanner.nextInt();
+        int arr[] = new int[len];
+        System.out.println("Введите диапазон значений массива: ");
+        int numbers = scanner.nextInt();
+        for (int i = 0; i < len; i++){
+            arr[i] = random.nextInt(numbers);
+        }
+        System.out.println(Arrays.toString(arr));
+        int max = arr[0];
+        int min = arr[len-1];
+        for (int i = 0; i < len; i++){
+            if(max <= arr[i]){
+                    max = arr[i];
+            }else if (min >= arr[i]){
+                min = arr[i];
+            }
+        }
+        System.out.println("Максимальный элемент массива = " + max + "\nМинимальный элемент массива = " + min);
     }
 }
